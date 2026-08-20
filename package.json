@@ -1,0 +1,28 @@
+{
+  "name": "dsh-config-export",
+  "description": "DSH 配置导出/导入：侧边栏面板勾选 ~/.dsh 各配置项（设置/插件 profile/SSH 主机/皮肤等），可选脱敏密码，一键打包 tar.gz 备份；也可从备份包恢复（恢复前自动先备份当前配置）。",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "dependencies": {
+    "schemastery": "^3.18.0"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT"
+}

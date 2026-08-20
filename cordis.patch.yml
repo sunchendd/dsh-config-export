@@ -1,0 +1,6 @@
+# dsh-config-export bundle patch: inserts the dual-face plugin row into the
+# web profile roster. Host half (exports ".") provides export/import routes;
+# browser half (exports "./client") injects the sidebar entry + panel.
+- insert:
+    - id: config-export
+      name: 'dsh-config-export'
